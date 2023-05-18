@@ -11,10 +11,42 @@
   </head>
   <body>
       
-    <div class="form-group ml-5">
+    <div class="form-group mt-4 ml-5">
         <h4>Bài tập: Quản lý tuyển sinh</h4>
-        
+        <div class="form-group mt-5">
+            <label>Nhập điểm chuẩn:</label>
+            <input id="benchmarkInput" type="number" class="form-control w-25 ">
+            <label class="mt-3">Nhập điểm 3 môn thi:</label><br>
+            <input id="subject1Input" type="number" placeholder="Điểm môn 1">
+            <input id="subject2Input" type="number" placeholder="Điểm môn 2">
+            <input id="subject3Input" type="number" placeholder="Điểm môn 3">
+            <br>
+            <label class="mt-3">Điểm ưu tiên theo khu vực:</label><br>
+            <select id="areaSelect">
+                <option>Khu vực</option>
+                <option value="A">A</option>
+                <option value="B">B</option>
+                <option value="C">C</option>
+                <option value="X">Không</option>
+            </select>
+            <br>
+            <label class="mt-3">Điểm ưu tiên theo đối tượng:</label><br>
+            <select id="typeSelect">
+                <option>Đối tượng</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="0">Không</option>
+            </select>
+            <br>
+            <button id="btnTinhDiem" class="btn btn-warning rounded-pill mt-3">Tra cứu</button>
+            <div class="mt-3 alert alert-warning w-25">
+                Tổng điểm: <span id="spanTongDiem"></span>
+                <br>
+                Kết quả: <span id="spanKetQua"></span>
+        </div>
     </div>
+    <hr/>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
