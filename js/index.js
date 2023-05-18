@@ -52,10 +52,4 @@ function doiTuong(type) {
     if(type === "3") return 1;
     return 0;
 }
-// Tính tổng điểm:
-function tongDiem() {
-    
 
-    
-}
-// Xét kết quả đậu rớt:
