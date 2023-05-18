@@ -53,3 +53,21 @@ function doiTuong(type) {
     return 0;
 }
 
+
+// Bài tập: Tính tiền điện
+
+// Input: Nhập họ tên user, nhập số tiêu thụ điện
+/*
+* Process:
+* DOM tới input thông tin tiêu thụ điện lấy value là số
+* Tính số tiền điện:
+*    số Kw <= 50kw ==> Tiền điện = số Kw đầu tiên * 500 
+*    50kw < số Kw <= 100kw  Tiền điện = số Kw đầu tiên + (số Kw - 50) * 650    
+*    100kw < số Kw <= 200kw  Tiền điện = số Kw đầu tiên + (50kw * 650) + (số Kw - 100) * 850
+*     200kw < số Kw <= 350kw  Tiền điện = số Kw đầu tiên + (50kw * 650) + (100kw * 850) + (số kw - 200) * 1100
+*    số Kw > 350kw  Tiền điện = số Kw đầu tiên + (50kw * 650) + (100kw * 850) + (150kw * 1100) + (số Kw - 350) * 1300
+*
+*    Gán kết quả
+*
+*/ 
+// Output: Show số tiền điện cho user
