@@ -95,3 +95,32 @@ function tienDien () {
     document.getElementById('spanTienDien').innerHTML = new Intl.NumberFormat('vn-VN').format(total);
     document.getElementById('spanHoTen').innerHTML = hoTen;
 }
+
+
+
+// Bài tập: Tính thuế thu nhập cá nhân
+
+/* - Input:
+*       + Nhập họ tên
+*       + Nhập tổng thu nhập năm: lương tháng * 12
+*       + Nhập số người phụ thuộc
+*
+* - Process:
+*       Tạo sự kiện click cho button
+*       DOM tới các thẻ input lấy value
+*       Tính tiền thuế:
+*           tiền thuế =  Tổng thu nhập năm - 4.000.000 - số người phụ thuộc * 1.600.000
+            tiền thuế <= 60tr  ==> tiền thuế * 5%
+            tiền thuế <= 120tr  ==> tiền thuế * 10%
+            tiền thuế <= 210tr  ==> tiền thuế * 15%
+            tiền thuế <= 384tr  ==> tiền thuế * 20%
+            tiền thuế <= 624tr  ==> tiền thuế * 25%
+            tiền thuế <= 960tr  ==> tiền thuế * 30%
+            tiền thuế > 960tr  ==> tiền thuế * 35%
+*
+*
+*
+*
+*
+* - Output: xuất ra màn hình thuế thu nhập cá nhân
+*/ 
