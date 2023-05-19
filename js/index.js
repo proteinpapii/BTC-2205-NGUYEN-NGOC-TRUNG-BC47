@@ -71,3 +71,27 @@ function doiTuong(type) {
 *
 */ 
 // Output: Show số tiền điện cho user
+
+document.getElementById('btnTienDien').onclick = tienDien;
+
+function tienDien () {
+
+    var hoTen = document.getElementById('hoTen').value;
+    var soKw = Number(document.getElementById('dienTieuThu').value);
+    var total;
+
+    if (soKw <= 50) {
+        total = soKw * 500;
+    } else if (soKw <= 100) {
+        total = 50 * 500 + (soKw - 50) * 650;
+    } else if (soKw <= 200) {
+        total = 50 * 500 + 50 * 650 + (200 - soKw) * 850;
+    } else if (soKw <= 350) {
+        total = 50 * 500 + 50 * 650 + 100 * 850 + (soKw - 200) * 1100;
+    } else {
+        total = 50 * 500 + 50 * 650 + 100 * 850 + 150 * 1100 + (soKw - 350) * 1300;
+    }
+
+    document.getElementById('spanTienDien').innerHTML = new Intl.NumberFormat('vn-VN').format(total);
+    document.getElementById('spanHoTen').innerHTML = hoTen;
+}
