@@ -156,3 +156,61 @@ function tinhThue() {
     document.getElementById('spanName').innerHTML = Name;
     document.getElementById('spanThue').innerHTML = new Intl.NumberFormat('vn-VN').format(tax);
 };
+
+
+
+// Bài tập: Tính tiền cáp 
+
+// Ẩn/hiện input số kết nối:
+document.getElementById('loaiKH').onchange = function () {
+    var select = document.getElementById('loaiKH').value;
+    var input = document.getElementById('ketNoi');
+    var label = document.getElementById('labelKetNoi');
+
+    if (select === 'DN') {
+        label.style.visibility = 'visible';
+        input.style.visibility = 'visible';
+    } else {
+        label.style.visibility = 'hidden';
+        input.style.visibility = 'hidden';
+    }
+}
+
+// Tính tiền cáp:
+document.getElementById('btnTienCap').onclick = tienCap;
+function tienCap () {
+    var maKH = document.getElementById('maKH').value;
+    var loaiKH = document.getElementById('loaiKH').value;
+    var soKenh = +document.getElementById('soKenh').value;
+    var ketNoi = +document.getElementById('ketNoi').value;
+    
+    // Bảng giá:
+    var billfee;
+    var servicefee;
+    var rentchannel;
+
+    if (loaiKH === 'ND') {
+        billfee = 4.5;
+        servicefee = 20.5;
+        rentchannel = 7.5;
+    } else {
+        billfee = 15;
+        rentchannel = 50;
+        if (ketNoi <= 10) {
+            servicefee = 75;
+        } else {
+            servicefee = 75 + (ketNoi - 10) * 5;
+        }
+    }
+
+    // Tính tiền:
+
+    var total;
+    total = billfee + servicefee + rentchannel * soKenh;
+
+    // Show kết quả:
+
+    document.getElementById('spanMaKh').innerHTML = maKH;
+    document.getElementById('spanTienCap').innerHTML = new Intl.NumberFormat('us-US', { style: 'currency', currency: 'USD' }).format(total);
+  
+};
