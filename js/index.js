@@ -124,3 +124,35 @@ function tienDien () {
 *
 * - Output: xuất ra màn hình thuế thu nhập cá nhân
 */ 
+
+document.getElementById('btnTinhThue').onclick = tinhThue;
+
+function tinhThue() {
+    var Name = document.getElementById('Name').value;
+    var thuNhap = +document.getElementById('thuNhapNam').value;
+    var soNguoi = +document.getElementById('nguoiPhuThuoc').value;
+
+    var total;
+    var tax;
+
+    total = thuNhap - 4e+6 - soNguoi * 1600000;
+
+    if (total <= 6e+6) {
+        tax = total * 5 / 100;
+    } else if (total <= 120e+6) {
+        tax = total * 10 / 100;
+    } else if (total <= 210e+6) {
+        tax = total * 15 / 100;
+    } else if (total <= 384e+6) {
+        tax = total * 20 / 100;
+    } else if (total <= 624e+6) {
+        tax = total * 25 / 100;
+    } else if (total <= 960e+6) {
+        tax = total * 30 / 100;
+    } else {
+        tax = total * 35 / 100;
+    }
+     
+    document.getElementById('spanName').innerHTML = Name;
+    document.getElementById('spanThue').innerHTML = new Intl.NumberFormat('vn-VN').format(tax);
+};
